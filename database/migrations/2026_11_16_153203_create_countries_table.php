@@ -9,15 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+        public function up(): void
     {
-        Schema::create('players', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('position');
-            $table->integer('number')->nullable();
-            $table->string('nationality')->nullable();
-            $table->date('birth_date')->nullable();
+            $table->string('name', 45); 
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('players');
+        Schema::dropIfExists('countries');
     }
 };
