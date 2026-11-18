@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trener extends Model
 {
-    //
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }
