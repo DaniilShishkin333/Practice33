@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
+    protected $fillable = ['name', 'year', 'number', 'team_id', 'city_id'];
+
 public function team()
 {
     return $this->belongsTo(Team::class);
