@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
 {
-    protected $fillable = ['name', 'year', 'team_id'];
-
     protected $table = 'staffs';
+    
+    protected $fillable = ['name', 'year', 'team_id'];
 
     public function team()
     {

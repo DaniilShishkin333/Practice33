@@ -8,7 +8,7 @@ class Team extends Model
 {
     protected $fillable = ['name', 'year', 'city_id'];
 
-    public function city()
+        public function city()
     {
         return $this->belongsTo(City::class);
     }
@@ -43,4 +43,3 @@ class Team extends Model
         return $this->belongsToMany(Tournament::class, 'teams_has_tournaments', 'team_id', 'tournament_id');
     }
 }
-

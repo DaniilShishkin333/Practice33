@@ -8,7 +8,7 @@ class Tournament extends Model
 {
     protected $fillable = ['name', 'year', 'country_id'];
 
-    public function teams()
+        public function teams()
     {
         return $this->belongsToMany(Team::class, 'teams_has_tournaments', 'tournament_id', 'team_id');
     }
