@@ -5,4 +5,4 @@ use App\Http\Controllers\TableController;
 
 Route::get('/', [TableController::class, 'index']);
 Route::get('/table/{table}', [TableController::class, 'show']);
-
+Route::get('/table/{table}/{id}' , [TableController::class, 'showItem']);

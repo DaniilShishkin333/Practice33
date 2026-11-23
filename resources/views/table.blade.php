@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             @foreach ($records as $record)
-                <tr>
+                <tr onclick="window.location='/table/{{ $table }}/{{ $record->id }}'" style="cursor: pointer;">
                     @foreach ($record->toArray() as $value)
                         <td>{{ $value }}</td>
                     @endforeach
