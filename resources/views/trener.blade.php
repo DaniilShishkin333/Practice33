@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Город #{{ $trener->id }}</title>
-</head>
-<body>
-    <h1>Информация о записи #{{ $trener->id }}</h1>
+@extends('layouts.catalog')
 
-    <table border="1" cellpadding="8" cellspacing="0">
-        @foreach ($trener-toArray() as $field => $value)
+@section('title', 'Тренер: ' . $trener->name)
+
+@section('content')
+    <h1>Тренер: {{ $trener->name }}</h1>
+
+    <div class="table-wrap">
+        <table>
             <tr>
-                <th>{{ $field }}</th>
-                <td>{{ $value ?? '—' }}</td>
+                <th>Имя</th>
+                <td>{{ $trener->name }}</td>
             </tr>
-        @endforeach
-    </table>
+            <tr>
+                <th>Год рождения</th>
+                <td>{{ $trener->year }}</td>
+            </tr>
+            <tr>
+                <th>Команда</th>
+                <td>{{ $trener->team_id }}</td>
+            </tr>
+        </table>
+    </div> 
 
-    <br>
+
+
     <a href="{{ url()->previous() }}">← Назад</a>
-</body>
-</html>
+@endsection

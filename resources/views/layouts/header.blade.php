@@ -1,14 +1,15 @@
-<header>
+<header class="site-header">
     <nav>
-        <a href="/">Главная</a>
-        <a href="/table/countries">Страны</a>
-        <a href="/table/cities">Города</a>
-        <a href="/table/teams">Команды</a>
-        <a href="/table/players">Игроки</a>
-        <a href="/table/treners">Тренеры</a>
-        <a href="/table/doctors">Врачи</a>
-        <a href="/table/staffs">Персонал</a>
-        <a href="/table/stadiums">Стадионы</a>
-        <a href="/table/tournaments">Турниры</a>
+        <a href="{{ url('/') }}">Главная</a>
+        <a href="{{ url('/table/countries') }}">Страны</a>
+        <a href="{{ url('/table/cities') }}">Города</a>
+        <a href="{{ url('/table/teams') }}">Команды</a>
+        <a href="{{ url('/table/players') }}">Игроки</a>
+        <a href="{{ url('/table/treners') }}">Тренеры</a>
+        <a href="{{ url('/table/doctors') }}">Врачи</a>
+        <a href="{{ url('/table/staffs') }}">Персонал</a>
+        <a href="{{ url('/table/stadiums') }}">Стадионы</a>
+        <a href="{{ url('/table/tournaments') }}">Турниры</a>
+        <a href="{{ url('/about') }}">О проекте</a>
     </nav>
 </header>

@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Список таблиц</title>
-</head>
-<body>
-    <h1>Список таблиц</h1>
-    <ul>
+@extends('layouts.catalog')
+
+@section('title', 'Каталог ЦСКА')
+
+@section('content')
+    <h1>Каталог ЦСКА</h1>
+
+
+    <ul class="catalog-list">
         @foreach ($counts as $table => $count)
-            <li>
-                <a href="/table/{{ $table }}">{{ $table }}</a> — {{ $count }} записей
-            </li>
+          <li>
+            <a href="{{ url('/table/' . $table) }}">{{ $table }}</a>
+            <br>
+            Записей: {{ $count }}
+        </li>
         @endforeach
     </ul>
-</body>
-</html>
-
+@endsection

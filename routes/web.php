@@ -14,15 +14,17 @@ use App\Http\Controllers\StadiumController;
 use App\Http\Controllers\TournamentController;
 
 Route::get('/', [TableController::class, 'index']);
+Route::get('/about', [StaticController::class, 'about']);
+
 Route::get('/table/{table}', [TableController::class, 'show']);
-Route::get('/table/{table}/{id}' , [TableController::class, 'showItem']);
-Route::get('/about' , [StaticController::class, 'about']); 
-Route::get('/table/countries/{id}' , [CountryController::class, 'show']);
-Route::get('/table/cities/{id}' , [CityController::class, 'show']);
-Route::get('/table/teams/{id}' , [TeamController::class, 'show']);
-Route::get('/table/players/{id}' , [PlayerController::class, 'show']);
-Route::get('/table/treners/{id}' , [TrenerController::class, 'show']);
-Route::get('/table/doctors/{id}' , [DoctorController::class, 'show']);
-Route::get('/table/staffs/{id}' , [StaffController::class, 'show']);
-Route::get('/table/stadiums/{id}' , [StadiumController::class, 'show']);
-Route::get('/table/tournaments/{id}' , [TournamentController::class, 'show']);
+Route::get('/table/{table}/{id}', [TableController::class, 'showItem']);
+
+Route::get('/countries/{id}', [CountryController::class, 'show']);
+Route::get('/cities/{id}', [CityController::class, 'show']);
+Route::get('/teams/{id}', [TeamController::class, 'show']);
+Route::get('/players/{id}', [PlayerController::class, 'show']);
+Route::get('/treners/{id}', [TrenerController::class, 'show']);
+Route::get('/doctors/{id}', [DoctorController::class, 'show']);
+Route::get('/staffs/{id}', [StaffController::class, 'show']);
+Route::get('/stadiums/{id}', [StadiumController::class, 'show']);
+Route::get('/tournaments/{id}', [TournamentController::class, 'show']);

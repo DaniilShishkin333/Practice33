@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Город #{{ $country->id }}</title>
-</head>
-<body>
-    <h1>Информация о записи #{{ $country->id }}</h1>
+@extends('layouts.catalog')
 
-    <table border="1" cellpadding="8" cellspacing="0">
-        @foreach ($country->toArray() as $field => $value)
-            <tr>
-                <th>{{ $field }}</th>
-                <td>{{ $value ?? '—' }}</td>
+@section('title', 'Страна: ' . $country->name)
+
+@section('content')
+    <h1>Страна: {{ $country->name }}</h1>
+
+    <div class="table-wrap">
+        <table>
+             <tr>
+                <th>Название страны</th>
+                <td>{{ $country->name }}</td>
             </tr>
-        @endforeach
-    </table>
+        </table>
+    </div>
 
-    <br>
+    
+
     <a href="{{ url()->previous() }}">← Назад</a>
-</body>
-</html>
+@endsection

@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Запись: {{ $table }} #{{ $record->id }}</title>
-</head>
-<body>
-    @include('layouts.header')
+@extends('layouts.catalog')
+
+@section('title', 'Запись из таблицы')
+
+@section('content')
+    <h1>Запись из таблицы: {{ request()->segment(2) }} (ID: {{ request()->segment(3) }})</h1>
+
+    <div class="table-wrap">
+        <table>
+            @foreach ($record->toArray() as $field => $value)
+                <tr>
+                    <th>{{ $field }}</th>
+                    <td>{{ $value ?? '-' }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
     
-    
-    <h1>Запись из таблицы: {{ $table }} (ID: {{ $record->id }})</h1>
 
-
-    <ul>
-        @foreach ($record->toArray() as $key =>$value )
-             <li><strong>{{ $key }}:</strong> {{ $value }}</li>    
-        @endforeach
-    </ul>
-
-    
-    <a href="/table/{{ $table }}">Назад к списку</a>
-
-
-    @include('layouts.footer')
-</body>
-</html>
+    <a href="{{ url()->previous() }}">← Назад к списку</a>
+@endsection
