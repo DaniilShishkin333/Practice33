@@ -5,23 +5,20 @@
 @section('content')
     <h1>Турнир: {{ $tournament->name }}</h1>
 
-    <div class="table-wrap">
-        <table>
-            <tr>
-                <th>Имя</th>
-                <td>{{ $tournament->name }}</td>
-            </tr>
-            <tr>
-                <th>Год рождения</th>
-                <td>{{ $tournament->year }}</td>
-            </tr>
-            <th>Страна (ID)</th>
-                <td>{{ $tournament->country_id }}</td>
-            </tr>
-        </table>
-    </div>
-
-
-
+    <table class="table-wrap">
+        <tr>
+            <th>Название</th>
+            <td>{{ $tournament->name }}</td>
+        </tr>
+        <tr>
+            <th>Год</th>
+            <td>{{ $tournament->year }}</td>
+        </tr>
+        <tr>
+            <th>Страна</th>
+            <td>{{ $tournament->country->name ?? 'Не указана' }}</td>
+        </tr>
+    </table>
+    
     <a href="{{ url()->previous() }}">← Назад</a>
 @endsection
